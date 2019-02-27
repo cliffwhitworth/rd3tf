@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>rd3tf</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+      body{
+        color: white;
+        /*
+        background: -webkit-gradient(linear, left bottom, left top, from(#ff6a00), to(#ee0979));
+        background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+        */
+        background: -webkit-gradient(linear, left bottom, left top, from(#b0c4de), to(#36454f ));
+        background: linear-gradient(0deg, #b0c4de 0%, #36454f  100%);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: scroll;
+        background-size: cover;
+      }
+
+      h1, h2 {
+        font-family: 'Catamaran';
+        font-weight: 800 !important;
+      }
+
+      #project {
+        text-align: center;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        font-family: 'Lato';
+      }
+
+      .bg-circle {
+        z-index: -1;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 100%;
+        background: -webkit-gradient(linear, left bottom, left top, from(#36454f), to(#b0c4de));
+        background: linear-gradient(0deg, #36454f 0%, #b0c4de 100%);
+      }
+
+      .bg-circle-1 {
+        height: 90rem;
+        width: 90rem;
+        top: 3rem;
+        left: -56rem;
+      }
+
+      .bg-circle-2 {
+        height: 50rem;
+        width: 50rem;
+        top: -30rem;
+        right: -25rem;
+      }
+
+      .bg-circle-3 {
+        height: 20rem;
+        width: 20rem;
+        top: 25rem;
+        right: 15%
+      }
+
+      .bg-circle-4 {
+        height: 30rem;
+        width: 30rem;
+        top: -5rem;
+      }
+
+      .bg-circle-5 {
+        height: 10rem;
+        width: 10rem;
+        top: 55rem;
+        right: 12%
+      }
+
+      .bg-circle-6 {
+        height: 5rem;
+        width: 5rem;
+        top: 70rem;
+        right: 35%
+      }
+
+    </style>
+
+    <script>
+      function placeElement(){
+        var w = window.innerWidth;
+        var d = document.getElementById('bg-circle-4');
+        var divW = d.offsetWidth;
+        d.style.left = (w/2)-(divW/2)+'px';
+      }
+    </script>
+
+  </head>
+  <body onresize="placeElement()">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div style="position: relative; overflow: hidden;">
+      <div id="project">
+        <div style="width: 600px; margin: 0 auto;">
+          <h1 style="padding-top: 13px;">RD3TF</h1>
+          <h2>ReactJS, D3, TensorFlowJS</h2>
+          <p style="text-align: justify;">
+            This is a learning project to see how ReactJS, D3, and TensorFlowJS work together.
+            The project uses TensorFlowJS to build a linear regression model that uses
+            selected features such as horsepower and weight to predict the miles per gallon (mpg).
+          </p>
+        </div>
+        <div id="root">
+          <div style="width: 600px; margin: 0 auto; text-align: center;">
+            Getting things ready.<br />This may take a few seconds.<br />
+            <i class="fa fa-cog fa-spin" style="font-size:24px;"></i>
+          </div>
+        </div>
+        <div style="width: 600px; margin: 0 auto;">
+          <p style="text-align: justify;">
+            The dataset is courtesy of Stephen Grider's course on
+            <a href="https://www.udemy.com/machine-learning-with-javascript">Machine Learning with Javascript</a>.
+            The TensorFlow model returns the coefficient of determination and predicts mpg based on user
+            inputs for learning rate, iterations, and predictor variables.
+            D3 is used to create scatterplots of each of the features compared to miles per gallon.
+            Website inspired by <a href="https://startbootstrap.com/themes/one-page-wonder/">Start Bootstrap</a>
+          </p>
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle" id="bg-circle-4"></div>
+      <div class="bg-circle-5 bg-circle"></div>
+      <div class="bg-circle-6 bg-circle"></div>
+
+      <script>
+        placeElement();
+      </script>
+    </div>
+  </body>
+</html>
