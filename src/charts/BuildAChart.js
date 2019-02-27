@@ -13,8 +13,6 @@ const width = 600 - margin.left - margin.right,
 class BuildAChart extends Component {
   constructor(props){
     super(props)
-    // this.createAChart = this.createAChart.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
     this.state = {
       btnDisabled: true,
       buildModelButton: <button className="btn btn-light" onClick={this.handleBuildModelClick}> Click to Build Model </button>,
@@ -84,7 +82,7 @@ class BuildAChart extends Component {
       x: x
     }, () => {
       this.initSingleFeature(); // get one feature for the scatter plot
-    });                                              // default is horsepower
+    });
   }
 
   // get one feature for scatter plot
@@ -196,7 +194,7 @@ class BuildAChart extends Component {
 
     let xAxisCall = d3.axisBottom(xScale);
 
-    // update scater plot, x label, and the x axis
+    // update scatter plot, x label, and the x axis
     let g = d3.select("#buildachart")
             .selectAll(".dot")
             .data(dataset);
@@ -390,8 +388,7 @@ class BuildAChart extends Component {
     })
   }
 
-  // returns min and max values of a feature
-  // and display it as help on the user inputs
+  // display min and max values of a feature for user inputs
   getMinMax = (feature) => {
     let f = [];
     let xmin = 0;
