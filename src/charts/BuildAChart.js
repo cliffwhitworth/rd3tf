@@ -17,11 +17,9 @@ class BuildAChart extends Component {
     // this.handleClick = this.handleClick.bind(this);
     this.state = {
       btnDisabled: true,
-      buildModel: false,
       buildModelButton: <button className="btn btn-light" onClick={this.handleBuildModelClick}> Click to Build Model </button>,
       feature: [],
       iterations: '100',
-      labels: {},
       learningRate: '0.01',
       observedValues: '[mpg]',
       prediction: '',
@@ -31,7 +29,6 @@ class BuildAChart extends Component {
       selectedFeaturesValues: [],
       showHyperParametersDiv: true,
       showPredictionDiv: false,
-      shuffledData: [],
       spinner: <i className="fa fa-cog" />,
       x: [],
       xlabel: 'horsepower',
