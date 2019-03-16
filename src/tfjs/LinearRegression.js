@@ -17,15 +17,15 @@ class LinearRegression extends Component {
   }
 
   gradientDescent() {
-    const j = this.features.matMul(this.weights);
-    const jsub = j.sub(this.observedValues);
+    const predicted = this.features.matMul(this.weights);
+    const residual = h.sub(this.observedValues);
 
-    const derivatives = this.features
+    const slope = this.features
       .transpose()
-      .matMul(jsub)
+      .matMul(residual)
       .div(this.features.shape[0]);
 
-    this.weights = this.weights.sub(derivatives.mul(this.options.learningRate));
+    this.weights = this.weights.sub(slope.mul(this.options.learningRate));
   }
 
   train() {
